@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años Monserrat Sarai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vino-chic': '#801012',
+                        'vino-oscuro': '#4a0809',
+                        'champagne': '#E8D3B9',
+                        'champagne-claro': '#F5EBE1',
+                    },
+                    fontFamily: {
+                        'serif-lujo': ['Playfair Display', 'serif'],
+                        'sans-moderno': ['Outfit', 'sans-serif'],
+                        'cursiva-amorosa': ['Great Vibes', 'cursive'],
+                    },
+                    backgroundImage: {
+                        'bg-moderno': 'linear-gradient(180deg, #801012 0%, #4a0809 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #801012; overflow-x: hidden; scroll-behavior: smooth; }
+        .text-gradient { background: linear-gradient(to right, #E8D3B9, #fff, #E8D3B9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .bg-typography { position: absolute; font-size: 35vh; line-height: 0.8; color: rgba(255, 255, 255, 0.03); font-family: 'Playfair Display', serif; font-weight: 700; top: 5%; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; width: 100%; max-width: 300px; margin: 0 auto; }
+        .calendar-day { font-size: 0.85rem; padding: 4px; }
+        .heart-marker { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.6); color: #E8D3B9; z-index: -1; }
+        .audio-btn { position: fixed; bottom: 24px; right: 24px; z-index: 50; background-color: #E8D3B9; color: #801012; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); cursor: pointer; }
+        .audio-btn.playing { animation: pulse-audio 2s infinite; }
+        @keyframes pulse-audio { 0% { box-shadow: 0 0 0 0 rgba(232, 211, 185, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(232, 211, 185, 0); } 100% { box-shadow: 0 0 0 0 rgba(232, 211, 185, 0); } }
+    </style>
+</head>
+<body class="bg-bg-moderno min-h-screen text-champagne-claro font-sans-moderno relative">
+    <div class="bg-typography">XV</div>
+    <main class="relative z-10 max-w-md mx-auto w-full px-8 py-16 flex flex-col items-center">
+        <section class="min-h-[60vh] flex flex-col justify-center items-center w-full mb-12">
+            <h1 class="reveal font-cursiva-amorosa text-7xl text-champagne mb-4">Monserrat</h1>
+            <h2 class="reveal delay-100 font-cursiva-amorosa text-6xl text-champagne mb-6">Sarai</h2>
+            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-Photoroom%20(1).png" alt="Detalle decorativo" class="w-30 h-auto mx-auto reveal delay-200">
+        </section>
+
+        <section class="w-full py-10 text-center">
+            <p class="font-serif-lujo italic text-xl text-champagne mb-4">En compañía de mis padres</p>
+            <div class="space-y-2 opacity-80">
+                <p>Cesar Coreno Martinez</p>
+                <p>Juan Martin Pilar Medina</p>
+                <p>Inés Ramirez Corona</p>
+            </div>
+        </section>
+
+        <section class="w-full py-10">
+            <p class="text-center text-champagne font-cursiva-amorosa text-5xl mb-6">Faltan</p>
+            <div class="reveal grid grid-cols-4 gap-4 text-center bg-[#5a0b0d]/20 p-6 rounded-2xl border border-champagne/10">
+                <div><span id="days" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Días</span></div>
+                <div><span id="hours" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Hrs</span></div>
+                <div><span id="mins" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Min</span></div>
+                <div><span id="secs" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Seg</span></div>
+            </div>
+            <!-- Nueva imagen añadida después de la cuenta regresiva -->
+            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-removebg-preview%20(2).png" alt="Detalle decorativo" class="w-40 h-auto mx-auto mt-8 reveal delay-300">
+        </section>
+
+        <section class="w-full py-10 flex flex-col items-center">
+            <h3 class="text-champagne mb-6 uppercase tracking-widest text-sm">Agosto 2026</h3>
+            <div class="calendar-grid text-champagne/60 text-xs mb-4">
+                <div>D</div><div>L</div><div>M</div><div>M</div><div>J</div><div>V</div><div>S</div>
+            </div>
+            <div class="calendar-grid text-champagne-claro">
+                <div></div><div></div><div></div><div></div><div></div><div></div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div><div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div><div class="calendar-day">8</div>
+                <div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div><div class="calendar-day">12</div><div class="calendar-day">13</div><div class="calendar-day">14</div><div class="calendar-day">15</div>
+                <div class="calendar-day">16</div><div class="calendar-day">17</div><div class="calendar-day">18</div><div class="calendar-day">19</div><div class="calendar-day">20</div><div class="calendar-day">21</div><div class="calendar-day">22</div>
+                <div class="calendar-day">23</div><div class="calendar-day">24</div><div class="calendar-day">25</div><div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
+                <div class="calendar-day font-bold text-[#801012] relative">29<div class="heart-marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div></div>
+                <div class="calendar-day">30</div><div class="calendar-day">31</div>
+            </div>
+            <p class="mt-6 text-champagne italic font-serif-lujo text-lg">29 de Agosto de 2026</p>
+            <div class="mt-8 text-center bg-[#5a0b0d]/30 p-6 rounded-2xl border border-champagne/10 w-full">
+                <p class="font-serif-lujo text-xl text-champagne mb-2">Salón El Encanto</p>
+                <p class="text-sm text-champagne-claro/80 mb-6">4:00 pm</p>
+                
+                <a href="https://www.google.com/maps/place/Sal%C3%B3n+El+Encanto/@20.6442993,-100.456761,56m/data=!3m1!1e3!4m6!3m5!1s0x85d351003e5f54df:0x5e557c2de527bb7d!8m2!3d20.6441389!4d-100.4565865!16s%2Fg%2F11xl01lgh4?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-block bg-champagne text-vino-chic px-6 py-2 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors mb-16">Ver ubicación</a>
+
+                <div class="pt-10 border-t border-champagne/20">
+                    <p class="text-champagne font-serif-lujo text-3xl mb-2">Dress Code</p>
+                    <p class="text-champagne-claro font-sans-moderno uppercase tracking-widest text-sm mb-6">Formal</p>
+                    <p class="text-sm text-champagne-claro/70 italic leading-relaxed mb-8">Te pedimos que evites el uso del color rojo en tu vestimenta, ya que este estará reservado solo para la quinceañera.</p>
+                    <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/87bd010aec6ebecaa9aef69642229a6b-Photoroom.png" alt="Dress Code" class="w-24 h-auto mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-10">
+            <div class="bg-[#5a0b0d]/40 p-8 rounded-3xl border border-champagne/20 text-center">
+                <h3 class="font-cursiva-amorosa text-4xl text-champagne mb-6">Confirmar Asistencia</h3>
+                <form id="rsvpForm" class="space-y-4">
+                    <input type="text" id="guestName" placeholder="Tu nombre completo" required class="w-full bg-[#3d0809] border border-champagne/20 p-3 rounded-lg text-white placeholder-champagne/50">
+                    <select id="attendance" class="w-full bg-[#3d0809] border border-champagne/20 p-3 rounded-lg text-white">
+                        <option value="Sí, asistiré">Sí, asistiré</option>
+                        <option value="No podré asistir">No podré asistir</option>
+                    </select>
+                    <button type="submit" class="w-full bg-champagne text-vino-chic font-bold py-3 rounded-lg hover:bg-white transition-colors">Confirmar asistencia</button>
+                </form>
+                <p class="mt-8 font-cursiva-amorosa text-3xl text-champagne opacity-90">¡No faltes!</p>
+            </div>
+        </section>
+    </main>
+
+    <audio id="bg-music" loop><source src="https://raw.githubusercontent.com/regina1503/Evangeline-la-princesa-y-el-sapo/main/La%20Princesa%20Y%20El%20Sapo%20-%20Ma%20Belle%20Evangeline%20(Latino)%20(Letra).mp3" type="audio/mpeg"></audio>
+    <button id="audio-btn" class="audio-btn"><svg id="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><svg id="pause-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value;
+            const status = document.getElementById('attendance').value;
+            const phone = "524422559918"; 
+            const message = encodeURIComponent(`Hola, mi nombre es ${name}. Confirmo mi asistencia: ${status}.`);
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        });
+
+        setInterval(() => {
+            const d = new Date("Aug 29, 2026 16:00:00") - new Date();
+            document.getElementById("days").innerText = Math.floor(d / 86400000).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((d % 86400000) / 3600000).toString().padStart(2, '0');
+            document.getElementById("mins").innerText = Math.floor((d % 3600000) / 60000).toString().padStart(2, '0');
+            document.getElementById("secs").innerText = Math.floor((d % 60000) / 1000).toString().padStart(2, '0');
+        }, 1000);
+
+        const a = document.getElementById("bg-music"), b = document.getElementById("audio-btn");
+        b.onclick = () => { a.paused ? a.play() : a.pause(); b.classList.toggle("playing"); document.getElementById("play-icon").classList.toggle("hidden"); document.getElementById("pause-icon").classList.toggle("hidden"); };
+    </script>
+</body>
+</html>
