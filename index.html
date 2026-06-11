@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XV Años Monserrat Sarai</title>
+    
+    <!-- Metatags para compartir en redes -->
+    <meta property="og:title" content="Mis XV Años Monserrat Sarai ❤️">
+    <meta property="og:description" content="Te invito a celebrar mis XV años. ¡No faltes!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-Photoroom%20(1).png">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,28 +40,43 @@
     </script>
     <style>
         body { background-color: #801012; overflow-x: hidden; scroll-behavior: smooth; }
-        .text-gradient { background: linear-gradient(to right, #E8D3B9, #fff, #E8D3B9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        
+        #sparkle-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: hidden; }
+        .magic-sparkle { position: absolute; background: #FFD700; border-radius: 50%; opacity: 0.6; box-shadow: 0 0 10px #FFD700; animation: fall linear infinite; }
+        @keyframes fall { 
+            0% { transform: translateY(-10px) translateX(0px) rotate(0deg); } 
+            50% { transform: translateY(50vh) translateX(15px) rotate(180deg); } 
+            100% { transform: translateY(100vh) translateX(-15px) rotate(360deg); } 
+        }
+
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+        
         .bg-typography { position: absolute; font-size: 35vh; line-height: 0.8; color: rgba(255, 255, 255, 0.03); font-family: 'Playfair Display', serif; font-weight: 700; top: 5%; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; width: 100%; max-width: 300px; margin: 0 auto; }
         .calendar-day { font-size: 0.85rem; padding: 4px; }
         .heart-marker { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.6); color: #E8D3B9; z-index: -1; }
-        .audio-btn { position: fixed; bottom: 24px; right: 24px; z-index: 50; background-color: #E8D3B9; color: #801012; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); cursor: pointer; }
+        .audio-btn { position: fixed; bottom: 24px; right: 24px; z-index: 50; background-color: #E8D3B9; color: #801012; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; }
+        .audio-btn:hover { transform: scale(1.1); }
         .audio-btn.playing { animation: pulse-audio 2s infinite; }
         @keyframes pulse-audio { 0% { box-shadow: 0 0 0 0 rgba(232, 211, 185, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(232, 211, 185, 0); } 100% { box-shadow: 0 0 0 0 rgba(232, 211, 185, 0); } }
     </style>
 </head>
 <body class="bg-bg-moderno min-h-screen text-champagne-claro font-sans-moderno relative">
+    <div id="sparkle-container"></div>
     <div class="bg-typography">XV</div>
+    
     <main class="relative z-10 max-w-md mx-auto w-full px-8 py-16 flex flex-col items-center">
         <section class="min-h-[60vh] flex flex-col justify-center items-center w-full mb-12">
             <h1 class="reveal font-cursiva-amorosa text-7xl text-champagne mb-4">Monserrat</h1>
-            <h2 class="reveal delay-100 font-cursiva-amorosa text-6xl text-champagne mb-6">Sarai</h2>
-            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-Photoroom%20(1).png" alt="Detalle decorativo" class="w-30 h-auto mx-auto reveal delay-200">
+            <h2 class="reveal delay-1 font-cursiva-amorosa text-6xl text-champagne mb-6">Sarai</h2>
+            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-Photoroom%20(1).png" alt="Detalle decorativo" class="w-30 h-auto mx-auto reveal delay-2">
         </section>
 
-        <section class="w-full py-10 text-center">
+        <section class="reveal w-full py-10 text-center">
             <p class="font-serif-lujo italic text-xl text-champagne mb-4">En compañía de mis padres</p>
             <div class="space-y-2 opacity-80">
                 <p>Cesar Coreno Martinez</p>
@@ -64,23 +86,22 @@
         </section>
 
         <section class="w-full py-10">
-            <p class="text-center text-champagne font-cursiva-amorosa text-5xl mb-6">Faltan</p>
-            <div class="reveal grid grid-cols-4 gap-4 text-center bg-[#5a0b0d]/20 p-6 rounded-2xl border border-champagne/10">
+            <p class="reveal text-center text-champagne font-cursiva-amorosa text-5xl mb-6">Faltan</p>
+            <div class="reveal delay-1 grid grid-cols-4 gap-4 text-center bg-[#5a0b0d]/20 p-6 rounded-2xl border border-champagne/10">
                 <div><span id="days" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Días</span></div>
                 <div><span id="hours" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Hrs</span></div>
                 <div><span id="mins" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Min</span></div>
                 <div><span id="secs" class="text-3xl font-serif-lujo text-champagne">00</span><br><span class="text-[0.6rem] uppercase">Seg</span></div>
             </div>
-            <!-- Nueva imagen añadida después de la cuenta regresiva -->
-            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-removebg-preview%20(2).png" alt="Detalle decorativo" class="w-40 h-auto mx-auto mt-8 reveal delay-300">
+            <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-Photoroom%20(2).png" alt="Detalle decorativo" class="reveal delay-2 w-40 h-auto mx-auto mt-8">
         </section>
 
         <section class="w-full py-10 flex flex-col items-center">
-            <h3 class="text-champagne mb-6 uppercase tracking-widest text-sm">Agosto 2026</h3>
-            <div class="calendar-grid text-champagne/60 text-xs mb-4">
+            <h3 class="reveal text-champagne mb-6 uppercase tracking-widest text-sm">Agosto 2026</h3>
+            <div class="reveal delay-1 calendar-grid text-champagne/60 text-xs mb-4">
                 <div>D</div><div>L</div><div>M</div><div>M</div><div>J</div><div>V</div><div>S</div>
             </div>
-            <div class="calendar-grid text-champagne-claro">
+            <div class="reveal delay-2 calendar-grid text-champagne-claro">
                 <div></div><div></div><div></div><div></div><div></div><div></div>
                 <div class="calendar-day">1</div>
                 <div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div><div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div><div class="calendar-day">8</div>
@@ -90,10 +111,13 @@
                 <div class="calendar-day font-bold text-[#801012] relative">29<div class="heart-marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div></div>
                 <div class="calendar-day">30</div><div class="calendar-day">31</div>
             </div>
-            <p class="mt-6 text-champagne italic font-serif-lujo text-lg">29 de Agosto de 2026</p>
-            <div class="mt-8 text-center bg-[#5a0b0d]/30 p-6 rounded-2xl border border-champagne/10 w-full">
+            <p class="reveal delay-3 mt-6 text-champagne italic font-serif-lujo text-lg">29 de Agosto de 2026</p>
+            <div class="reveal delay-1 mt-8 text-center bg-[#5a0b0d]/30 p-6 rounded-2xl border border-champagne/10 w-full">
                 <p class="font-serif-lujo text-xl text-champagne mb-2">Salón El Encanto</p>
                 <p class="text-sm text-champagne-claro/80 mb-6">4:00 pm</p>
+                
+                <!-- Imagen actualizada -->
+                <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/image-removebg-preview%20(1).png" alt="Detalle Salón" class="w-32 h-auto mx-auto mb-4 opacity-90">
                 
                 <a href="https://www.google.com/maps/place/Sal%C3%B3n+El+Encanto/@20.6442993,-100.456761,56m/data=!3m1!1e3!4m6!3m5!1s0x85d351003e5f54df:0x5e557c2de527bb7d!8m2!3d20.6441389!4d-100.4565865!16s%2Fg%2F11xl01lgh4?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-block bg-champagne text-vino-chic px-6 py-2 rounded-full text-sm uppercase tracking-widest font-semibold hover:bg-white transition-colors mb-16">Ver ubicación</a>
 
@@ -101,12 +125,12 @@
                     <p class="text-champagne font-serif-lujo text-3xl mb-2">Dress Code</p>
                     <p class="text-champagne-claro font-sans-moderno uppercase tracking-widest text-sm mb-6">Formal</p>
                     <p class="text-sm text-champagne-claro/70 italic leading-relaxed mb-8">Te pedimos que evites el uso del color rojo en tu vestimenta, ya que este estará reservado solo para la quinceañera.</p>
-                    <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/87bd010aec6ebecaa9aef69642229a6b-Photoroom.png" alt="Dress Code" class="w-24 h-auto mx-auto">
+                    <img src="https://raw.githubusercontent.com/regina1503/Mis-xv-a-os-Monserrat-Sarai/main/87bd010aec6ebecaa9aef69642229a6b-Photoroom.png" alt="Dress Code" class="w-40 h-auto mx-auto">
                 </div>
             </div>
         </section>
 
-        <section class="w-full py-10">
+        <section class="reveal w-full py-10">
             <div class="bg-[#5a0b0d]/40 p-8 rounded-3xl border border-champagne/20 text-center">
                 <h3 class="font-cursiva-amorosa text-4xl text-champagne mb-6">Confirmar Asistencia</h3>
                 <form id="rsvpForm" class="space-y-4">
@@ -126,6 +150,20 @@
     <button id="audio-btn" class="audio-btn"><svg id="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><svg id="pause-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button>
 
     <script>
+        function spawnSparkle() {
+            const container = document.getElementById('sparkle-container');
+            const s = document.createElement('div');
+            s.className = 'magic-sparkle';
+            const size = Math.random() * 6 + 2;
+            s.style.width = size + 'px';
+            s.style.height = size + 'px';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.animationDuration = (Math.random() * 8 + 8) + 's';
+            container.appendChild(s);
+            setTimeout(() => s.remove(), 16000);
+        }
+        setInterval(spawnSparkle, 600);
+
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         
